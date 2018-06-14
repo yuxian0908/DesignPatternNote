@@ -29,7 +29,34 @@
     console.log(childA.getName())
     console.log(childA.getAge())
     childA.speak()
+## 多態
+    class Cat{
+        constructor(){
+            this.speak = ()=>{
+                console.log('meow')
+            }
+        }
+    }
 
+    class Dog{
+        constructor(){
+            this.speak = ()=>{
+                console.log('woof')
+            }
+        }
+    }
+
+    let doSpeak = (animal)=>{
+        if(animal.speak instanceof Function){
+            animal.speak()
+        }
+    }
+
+    let d = new Dog()
+    let c = new Cat()
+
+    doSpeak(c)
+    
 ## clone創建對象(原型模式)
     Object.create = Object.create || function( obj ){
         var F = function(){};
