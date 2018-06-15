@@ -99,3 +99,16 @@
     test.speak()
     console.log(test.getName())
 
+## php 物件導向
+    <?php
+    class demo{
+    
+        public $hello = 'Hello World';
+
+        function hello(){
+            echo $this->hello;
+        }
+    }   
+    $demo = new demo;
+    $demo->hello();
+    ?>

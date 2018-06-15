@@ -83,3 +83,28 @@
     console.log(Universe)
     console.log(u1.name); //'bar'
     console.log(u1 === u2); //true
+
+## php 懶漢式
+    <?php
+    class Singleton{
+        private static $instance;
+        public static function getInstance(): Singleton{
+            if (null === static::$instance) {
+                static::$instance = new static();
+            }
+
+            return static::$instance;
+        }
+        private function __construct(){}
+        private function __clone(){}
+        private function __wakeup(){}
+
+        
+        public function getName(){
+            return "jimmy";
+        }
+    }
+
+    $test = Singleton::getInstance();
+    var_dump($test);
+    ?>
